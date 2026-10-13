@@ -2,9 +2,9 @@ import { motion, useInView } from 'motion/react';
 import { useRef, useState } from 'react';
 
 /**
- * ProductCard — Blinkit UI Product Card.
- * Displays clean white container, image preview, discount pill, wishlist heart,
- * product title, category, formatted pricing, and green outline Blinkit "ADD" button.
+ * ProductCard — Premium Product Card for APNA MART DIBIYAPUR (DEC-016).
+ * Pure white card with Champagne Gold subtle border, crisp typography,
+ * verified store pricing, discount badge, and Deep Forest Green ADD button.
  */
 function ProductCard({ product, index, onAddToCart }) {
   const [isWishlisted, setIsWishlisted] = useState(false);
@@ -17,55 +17,67 @@ function ProductCard({ product, index, onAddToCart }) {
       initial={{ opacity: 0, y: 15 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.35, delay: index * 0.05 }}
-      className="group bg-white rounded-2xl border border-gray-100 shadow-xs hover:shadow-md transition-all duration-200 flex flex-col justify-between overflow-hidden"
+      className="group bg-white rounded-2xl border border-[#C5A45B]/30 hover:border-[#123B2A] shadow-2xs hover:shadow-md transition-all duration-200 flex flex-col justify-between overflow-hidden"
     >
       {/* Image Preview Container */}
-      <div className="relative aspect-square bg-[#FBFBFC] p-3 flex items-center justify-center overflow-hidden">
-        {/* Discount Pill Badge (Blinkit Style) */}
+      <div className="relative aspect-square bg-[#FAF6ED]/70 p-3 flex items-center justify-center overflow-hidden">
+        {/* Discount Badge */}
         {product.discount && (
-          <div className="absolute top-2 left-2 z-10 px-1.5 py-0.5 rounded-md bg-[#DEF3E3] text-[#0C831F] text-[10px] font-extrabold uppercase tracking-wide">
+          <span className="absolute top-2 left-2 z-10 px-2 py-0.5 rounded-md bg-[#123B2A] text-[#FAF6ED] text-[10px] font-extrabold tracking-wide border border-[#C5A45B]/30 shadow-2xs">
             {product.discount}
-          </div>
+          </span>
         )}
 
-        {/* Wishlist Heart Icon Button */}
+        {/* Wishlist Heart Toggle */}
         <button
           onClick={() => setIsWishlisted(!isWishlisted)}
-          className={`absolute top-2 right-2 z-10 w-6 h-6 rounded-full flex items-center justify-center transition-all cursor-pointer ${
-            isWishlisted
-              ? 'bg-[#0C831F] text-white'
-              : 'bg-white/80 text-gray-400 hover:text-red-500 shadow-2xs'
-          }`}
-          aria-label={`Save ${product.title} to wishlist`}
+          className="absolute top-2 right-2 z-10 w-7 h-7 rounded-full bg-white/90 hover:bg-white text-gray-400 hover:text-rose-600 flex items-center justify-center shadow-2xs cursor-pointer border border-[#C5A45B]/20 transition-colors"
+          aria-label={`Wishlist ${product.title}`}
         >
-          <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+          <svg
+            className={`w-4 h-4 transition-transform active:scale-125 ${
+              isWishlisted ? 'text-rose-600 fill-current' : 'fill-none'
+            }`}
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+            />
           </svg>
         </button>
 
-        {/* Product Visual Icon / Emoji */}
-        <div className="flex flex-col items-center justify-center group-hover:scale-105 transition-transform duration-200">
-          <span className="text-4xl sm:text-5xl drop-shadow-xs" role="img" aria-label={product.title}>
-            {product.icon}
-          </span>
-        </div>
+        {/* Product Visual Representation */}
+        <span
+          className="text-6xl sm:text-7xl group-hover:scale-110 transition-transform duration-300 drop-shadow-xs select-none"
+          role="img"
+          aria-label={product.title}
+        >
+          {product.icon}
+        </span>
       </div>
 
-      {/* Product Content Details */}
-      <div className="p-2.5 sm:p-3 flex flex-col flex-1 justify-between gap-2">
+      {/* Product Details & Action */}
+      <div className="p-3 sm:p-3.5 flex flex-col flex-1 justify-between gap-2">
         <div>
-          <h3 className="font-heading font-bold text-xs sm:text-sm text-charcoal-900 group-hover:text-[#0C831F] transition-colors line-clamp-1 leading-snug">
+          <span className="text-[10px] font-bold text-[#E8752E] uppercase tracking-wider block mb-0.5">
+            {product.category}
+          </span>
+          <h3 className="font-heading font-extrabold text-xs sm:text-sm text-[#252922] line-clamp-1 leading-snug group-hover:text-[#123B2A] transition-colors">
             {product.title}
           </h3>
-          <p className="text-[10px] sm:text-[11px] text-gray-500 line-clamp-1 mt-0.5 capitalize">
-            {product.category}
+          <p className="text-[10px] text-[#575C52] line-clamp-1 mt-0.5">
+            {product.subtitle}
           </p>
         </div>
 
-        {/* Price & Blinkit ADD Button Row */}
-        <div className="pt-1.5 flex items-center justify-between gap-1.5 border-t border-gray-50">
-          <div className="flex items-baseline gap-1">
-            <span className="text-xs sm:text-sm font-extrabold text-charcoal-900">
+        {/* Price & Add to Cart Button */}
+        <div className="flex items-center justify-between pt-1 border-t border-[#FAF6ED]">
+          <div className="flex flex-col leading-tight">
+            <span className="text-sm sm:text-base font-black text-[#123B2A]">
               ₹{product.price}
             </span>
             {product.mrp && (
@@ -73,18 +85,15 @@ function ProductCard({ product, index, onAddToCart }) {
                 ₹{product.mrp}
               </span>
             )}
-            <span className="hidden">₹ In-Store</span>
           </div>
 
-          {/* Green Outline Blinkit ADD Button */}
-          <motion.button
-            whileTap={{ scale: 0.92 }}
+          <button
             onClick={() => onAddToCart(product)}
-            className="px-3 sm:px-4 py-1 rounded-lg border border-[#0C831F] bg-white hover:bg-[#0C831F] text-[#0C831F] hover:text-white font-extrabold text-[11px] sm:text-xs tracking-wider transition-colors cursor-pointer shadow-2xs"
+            className="blinkit-btn-add px-4 sm:px-5 py-1.5 rounded-lg text-xs tracking-wider uppercase cursor-pointer active:scale-95 shadow-2xs"
             aria-label={`Add ${product.title} to cart`}
           >
             ADD
-          </motion.button>
+          </button>
         </div>
       </div>
     </motion.div>
@@ -92,8 +101,7 @@ function ProductCard({ product, index, onAddToCart }) {
 }
 
 /**
- * FeaturedProducts / Today's Special Deals — Blinkit UI Section.
- * Matches "Today's Special Deals" from reference screenshot.
+ * FeaturedProducts / Today's Special Deals — Premium Deals Section (DEC-016).
  */
 export default function FeaturedProducts() {
   const [toastMessage, setToastMessage] = useState('');
@@ -112,18 +120,18 @@ export default function FeaturedProducts() {
     {
       id: 'deal-2',
       title: 'Storage Container Set',
-      subtitle: 'Modular BPA-free pantry containers',
+      subtitle: 'Airtight food-safe boxes',
       category: 'Storage',
       price: 299,
       mrp: 399,
       discount: '25% OFF',
-      icon: '📦',
+      icon: '🍱',
     },
     {
       id: 'deal-3',
       title: 'Stylish Handbag',
-      subtitle: 'Everyday lifestyle purse',
-      category: 'Bags & accessories',
+      subtitle: 'Everyday lifestyle companion',
+      category: 'Bags & Accessories',
       price: 499,
       mrp: 600,
       discount: '17% OFF',
@@ -132,18 +140,18 @@ export default function FeaturedProducts() {
     {
       id: 'deal-4',
       title: 'Cleaning Combo Pack',
-      subtitle: 'Complete home-cleaning kit',
-      category: 'Cleaning essentials',
+      subtitle: 'Complete home cleaning kit',
+      category: 'Cleaning & Home',
       price: 349,
-      mrp: 420,
-      discount: '17% OFF',
-      icon: '🧹',
+      mrp: 450,
+      discount: '22% OFF',
+      icon: '🧴',
     },
     {
       id: 'deal-5',
-      title: 'Ceramic Dinner Set',
-      subtitle: 'Handcrafted ceramic serving plates',
-      category: 'Crockery',
+      title: 'Ceramic Tea Mug Set',
+      subtitle: 'Set of 6 handcrafted mugs',
+      category: 'Kitchen Essentials',
       price: 499,
       mrp: 650,
       discount: '23% OFF',
@@ -153,7 +161,7 @@ export default function FeaturedProducts() {
       id: 'deal-6',
       title: 'Airtight Storage Jars',
       subtitle: 'Stackable transparent jars',
-      category: 'Storage',
+      category: 'Plastic & Storage',
       price: 249,
       mrp: 320,
       discount: '22% OFF',
@@ -168,29 +176,28 @@ export default function FeaturedProducts() {
 
   return (
     <section id="featured" className="py-4 sm:py-6 px-3 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
-      <div>
+      <div id="deals">
 
-        {/* Section Header (Blinkit Style) */}
+        {/* Section Header */}
         <div className="flex items-end justify-between mb-3 sm:mb-4">
           <div>
-            <h2 className="font-heading font-extrabold text-lg sm:text-xl text-charcoal-900 tracking-tight">
+            <h2 className="font-heading font-extrabold text-lg sm:text-xl text-[#123B2A] tracking-tight">
               Today&apos;s Special Deals
             </h2>
-            <p className="text-xs text-gray-500 mt-0.5">
-              Big savings on everyday favourites
+            <p className="text-[11px] text-[#575C52]">
+              Big savings on everyday favourites • Verified in-store value
             </p>
           </div>
-
           <a
-            href="#contact"
-            className="text-xs font-bold text-[#0C831F] hover:text-[#086918] transition-colors"
+            href="#categories"
+            className="text-xs font-bold text-[#123B2A] hover:text-[#E8752E] transition-colors"
           >
             View all →
           </a>
         </div>
 
-        {/* 2-Column Mobile Grid / 3-Column Tablet / 6-Column Desktop Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 sm:gap-3.5">
+        {/* Product Cards Grid: 2 columns on mobile, 4 on tablet, 6 on desktop */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2.5 sm:gap-3.5">
           {products.map((product, index) => (
             <ProductCard
               key={product.id}
@@ -201,13 +208,18 @@ export default function FeaturedProducts() {
           ))}
         </div>
 
-        {/* Toast Notification */}
+        {/* Interactive Toast Notification */}
         {toastMessage && (
-          <div className="fixed bottom-20 md:bottom-6 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-xl bg-charcoal-900 text-white text-xs font-bold shadow-lg flex items-center gap-2 animate-bounce">
-            <span className="text-[#0C831F]">✓</span>
+          <div
+            role="status"
+            aria-live="polite"
+            className="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 bg-[#123B2A] text-white px-4 py-2.5 rounded-full shadow-lg border border-[#C5A45B] text-xs font-bold flex items-center gap-2 animate-bounce"
+          >
+            <span className="w-2 h-2 rounded-full bg-[#E8752E]" />
             <span>{toastMessage}</span>
           </div>
         )}
+
       </div>
     </section>
   );

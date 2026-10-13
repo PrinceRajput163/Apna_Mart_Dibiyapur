@@ -339,6 +339,51 @@ Inquire with the user/owner regarding palette confirmation (`PEND-007`), commit 
 **Exact Next Actionable Step**:
 Invite user to review the live Blinkit UI at `http://localhost:5173/` and proceed to Phase 4 (dynamic product catalog and cart drawer).
 
+---
+
+## Entry 9 — 2026-10-14 ~00:38 IST
+
+**Task**: Official Circular Logo Asset Integration & Premium Palette UI Redesign (DEC-016)
+
+**Objective**: Remove the yellow-heavy UI theme and apply the owner-approved premium Indian home and lifestyle palette (Deep Forest Green `#123B2A`, Warm Ivory `#FAF6ED`, Champagne Gold `#C5A45B`, Warm Orange `#E8752E`, Charcoal `#252922`, and Pure White `#FFFFFF`), integrate the authentic circular APNA MART DIBIYAPUR logo image asset provided by the owner without alteration or recolouring, and verify 100% test pass rate.
+
+**Files Changed / Created**:
+- `frontend/public/assets/branding/apna-mart-logo.jpg`: Copied original circular logo image asset byte-for-byte (485,814 bytes).
+- `frontend/src/assets/branding/apna-mart-logo.jpg`: Mirrored asset copy for source imports.
+- `DECISIONS.md`: Recorded `DEC-016` (Premium Palette & Logo Integration) and marked `PEND-003` resolved.
+- `PROJECT_CONTEXT.md`: Recorded verified logo asset path and approved premium palette specification.
+- `REQUIREMENTS.md`: Updated Section 4 UI/UX requirements with DEC-016 palette tokens.
+- `IMPLEMENTATION_PLAN.md`: Updated to Phase 2C (Premium UI Redesign & Official Logo Integration) completed.
+- `frontend/index.html`: Updated `theme-color` meta tag from `#FFD200` to `#123B2A` (Deep Forest Green).
+- `frontend/src/index.css`: Reconfigured `@theme` design tokens with approved premium colors, set `body` background to Warm Ivory (`#FAF6ED`) and text to Charcoal (`#252922`), and updated utility classes (`.btn-primary`, `.blinkit-btn-add`).
+- `frontend/src/components/Navbar.jsx`: Redesigned header with Warm Ivory background, Champagne Gold bottom border, official circular logo image (`apna-mart-logo.jpg`), Deep Forest Green brand title, refined rounded search bar with gold focus ring, and Warm Orange cart badge.
+- `frontend/src/components/Hero.jsx`: Redesigned lifestyle card with Warm Ivory canvas, Champagne Gold radial accents, Playfair Display headline, Deep Forest Green "Shop now ➔" button, and in-store category preview featuring official logo badge.
+- `frontend/src/components/Categories.jsx`: Updated 2x4 category grid with pure white cards and Champagne Gold borders.
+- `frontend/src/components/OfferBanners.jsx`: Restyled into festive celebratory card (Warm Ivory & Gold) and Deep Forest Green special value banner.
+- `frontend/src/components/FeaturedProducts.jsx`: Pure white product cards with Champagne Gold borders, verified deal pricing (`₹599`, `₹299`), and Deep Forest Green ADD buttons.
+- `frontend/src/components/ServiceBenefits.jsx`: Pure white guarantee pill strip with Warm Ivory icon circles and Champagne Gold borders.
+- `frontend/src/components/ShopByCollection.jsx`: Restyled 4 collection cards with white containers, diagonal arrows, and gold borders.
+- `frontend/src/components/NewArrivals.jsx`: Harmonized product cards with premium palette.
+- `frontend/src/components/StoreIntro.jsx` & `ContactCTA.jsx`: Replaced green/yellow accents with Deep Forest Green, Warm Ivory, and Champagne Gold styling.
+- `frontend/src/components/Footer.jsx`: Displayed official circular logo image, bilingual tagline, verified store address, phone numbers, and owner credit Shyam Sundar Rajput.
+- `frontend/src/components/BottomNav.jsx`: Warm Ivory bottom navigation bar with Deep Forest Green active tab indicator.
+- `frontend/src/App.jsx`: Updated root background to Warm Ivory (`#FAF6ED`) with Forest Green text selection.
+- `PROJECT_STATUS.md`: Updated current status to Phase 2C Completed.
+
+**Commands Executed & Verified Results**:
+- `npm test`: **PASSED** (exit code 0; 8 test files passed, 30 of 30 tests passed in 17.55s).
+- `npm run lint`: **PASSED** (exit code 0; 0 errors, 0 warnings across all files).
+- `npm run build`: **PASSED** (exit code 0; 437 modules transformed, built in 515ms).
+- Live development server (`task-580`): Running live at `http://localhost:5173/`.
+
+**Remaining Issues & Pending Actions**:
+- User inspection of live premium storefront at `http://localhost:5173/`.
+- Future Phase 4: Dynamic catalog and cart drawer state.
+
+**Exact Next Actionable Step**:
+Present the completed premium UI redesign to the owner, highlight the integrated official circular logo and verified dev server, and prepare for Phase 4.
+
+
 
 
 

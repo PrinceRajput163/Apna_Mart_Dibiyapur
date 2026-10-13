@@ -63,11 +63,15 @@
   - Full desktop navigation header
   - Responsive multi-column grid layouts
   - Polished hover states, micro-interactions, and accessible keyboard navigation
-- **Color & Style Aesthetics**:
-  - Warm cream / off-white background (`#FAF7F2`)
-  - Deep burgundy / maroon primary shopping buttons and key accents (`#6B1D2F`)
-  - Orange highlights and subtle gold accents
-  - Elegant serif typography for hero / display headings paired with clean, readable sans-serif body text
+- **Color & Style Aesthetics (Approved DEC-016)**:
+  - Warm Ivory primary background (`#FAF6ED`)
+  - Deep Forest Green primary shopping buttons and navigation accents (`#123B2A`)
+  - Champagne Gold restrained borders, dividers, and decorative accents (`#C5A45B`)
+  - Warm Orange secondary CTAs and highlight accents (`#E8752E`)
+  - Charcoal body and heading text for high contrast readability (`#252922`)
+  - Pure White card containers with subtle borders and gentle shadows (`#FFFFFF`)
+  - Authentic circular brand logo displayed without alteration or recolouring (`public/assets/branding/apna-mart-logo.jpg`)
+  - Elegant serif typography (Playfair Display) for hero headlines paired with clean modern sans-serif body text (Outfit)
 
 ## 5. Strict Constraints & Non-Functional Requirements
 

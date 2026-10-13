@@ -18,32 +18,35 @@
 ## Brand & Visual Identity
 
 ### Approved Logo & Artwork
-- **Logo Status**: Original logo and promotional artwork provided by owner in print/promotional materials, but **not yet present locally in project files**.
-- **Asset Dependency**: Owner must provide the original logo image file (to be placed in `frontend/src/assets/logo.png` or `frontend/public/logo.png`).
-- **Logo Rule**: **Never** recreate the logo with AI, alter its artwork, or silently substitute a placeholder. Preserve original green, orange, cream, and gold visual identity.
-- **Verified Logo Path**: PENDING OWNER FILE UPLOAD.
+- **Logo Status**: Original circular brand logo provided by owner and successfully integrated into project.
+- **Asset Dependency**: Resolved. Original high-resolution circular logo asset placed byte-for-byte in `frontend/public/assets/branding/apna-mart-logo.jpg` and `frontend/src/assets/branding/apna-mart-logo.jpg`.
+- **Logo Rule**: **Never** recreate the logo with AI, alter its artwork, or silently substitute a placeholder. Preserve original circular emblem containing green, orange, cream, and gold visual identity, house roofline, shopping cart, "APNA MART DIBIYAPUR", "HOME & LIFESTYLE STORE", and "Har Zaroorat, Ek Hi Jagah."
+- **Verified Logo Path**: `frontend/public/assets/branding/apna-mart-logo.jpg` (servable via `/assets/branding/apna-mart-logo.jpg`).
 
-### Approved Storefront Design Reference (Mobile E-Commerce)
-- **Primary Visual Reference**: Approved mobile e-commerce homepage layout.
-- **Palette**:
-  - Background: Warm cream / off-white (`#FAF7F2` / `#FDFCFA`)
-  - Primary UI & Shopping Buttons: Deep burgundy / maroon (`#6B1D2F` / `#7A1C30`)
-  - Highlights & Accents: Vibrant orange (`#E8602D`) and subtle gold details (`#D4A853`)
-  - Text: Deep charcoal / espresso for contrast (`#1F1A1C` / `#2D2627`)
+### Approved Storefront Design Reference & Premium Palette
+- **Primary Visual Reference**: Approved premium Indian home and lifestyle mobile & desktop e-commerce layout.
+- **Palette (DEC-016)**:
+  - Primary Page Background: Warm Ivory (`#FAF6ED`)
+  - Primary UI & Action Buttons: Deep Forest Green (`#123B2A`)
+  - Subtle Borders, Dividers & Accents: Champagne Gold (`#C5A45B`)
+  - Secondary CTAs & Selective Highlights: Warm Orange (`#E8752E`)
+  - Body & Heading Typography: Charcoal (`#252922`)
+  - Card & Container Surfaces: Pure White (`#FFFFFF`) / Soft Warm Ivory
 - **Typography**:
-  - Hero & Display Headings: Elegant serif typography (e.g. Playfair Display / Cormorant / Cinzel)
-  - Body & UI Text: Outfit / Inter (readable, clean modern sans-serif)
+  - Hero & Display Headings: Playfair Display serif & Outfit bold
+  - Body & UI Text: Outfit / sans-serif (clean, readable modern typography)
   - Hindi Script: Noto Sans Devanagari
 - **Key Reference Components**:
-  - Compact premium header with logo, hamburger menu, search, wishlist, account, and shopping cart
-  - Prominent product search bar
-  - Large lifestyle hero banner with headline and "Shop Now" CTA
-  - Circular category shortcuts with clean iconography
-  - Promotional collection banners (when approved data is available)
-  - Product cards featuring product image, title, verified price, and Add to Cart action
-  - Service-benefit strip (e.g. genuine products, local delivery, store pickup)
-  - Mobile bottom navigation bar (Home, Categories, Offers, Wishlist, Account)
-  - Responsive desktop navigation and layout
+  - Premium header featuring the authentic circular logo image, Dibiyapur location line, refined rounded search bar, cart badge, and account actions
+  - Elegant hero lifestyle banner with Playfair Display headline, bilingual tagline, trust highlights, and Forest Green "Shop now ➔" CTA
+  - Clean circular & card category shortcuts (Crockery, Plastic & Storage, Bags & Accessories, Cleaning & Home, Gift Items, Backpacks & More, Kitchen Essentials)
+  - Festival & seasonal collection banners in rich forest green, gold, and warm orange
+  - Clean product deal cards with consistent aspect ratios, real deal pricing (`₹599`, `₹299`), and Forest Green Add-to-Cart buttons
+  - Verifiable service-benefit guarantee strip (physical store in Dibiyapur, genuine quality, counter pickup, friendly local support)
+  - Shop by Collection pastel cards and New Arrivals grid
+  - Store Intro, Contact section with working telephone links and Google Maps directions link
+  - Premium brand footer with official circular logo, verified address, phone numbers, and owner credit
+  - Fixed mobile bottom navigation with Deep Forest Green active indicator
 
 ## Target Users
 

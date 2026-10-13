@@ -1,53 +1,56 @@
 @import "tailwindcss";
 
-/* ===== APNA MART DIBIYAPUR — BLINKIT UI DESIGN TOKENS ===== */
+/* ===== APNA MART DIBIYAPUR — PREMIUM BRAND PALETTE DESIGN TOKENS (DEC-016) ===== */
 
 @theme {
-  /* Blinkit Signature Theme Tokens */
-  --color-blinkit-yellow: #ffd200;
-  --color-blinkit-yellow-dark: #f5c500;
-  --color-blinkit-yellow-light: #fff8d6;
+  /* Approved Premium Brand Palette */
+  --color-forest: #123b2a;
+  --color-forest-dark: #0b271c;
+  --color-forest-light: #eaf1ed;
+  --color-forest-hover: #0e3022;
 
-  /* Blinkit Brand Green (Buttons, Active States, Logo) */
-  --color-blinkit-green: #0c831f;
-  --color-blinkit-green-hover: #086918;
-  --color-blinkit-green-dark: #05400e;
-  --color-blinkit-green-light: #ebf7ee;
-  --color-blinkit-green-border: #25a244;
-  --color-blinkit-mint: #def3e3;
-  --color-blinkit-cream: #fef7d9;
+  --color-ivory: #faf6ed;
+  --color-ivory-dark: #f0ebd9;
+  --color-ivory-light: #fefdfa;
+
+  --color-gold: #c5a45b;
+  --color-gold-light: #f6f0df;
+  --color-gold-dark: #a8883e;
+
+  --color-orange: #e8752e;
+  --color-orange-hover: #d26420;
+  --color-orange-light: #fdf3eb;
+
+  --color-charcoal: #252922;
+  --color-charcoal-muted: #575c52;
+  --color-charcoal-light: #868c80;
+
+  /* Aliases for semantic usage */
+  --color-brand-green: #123b2a;
+  --color-brand-ivory: #faf6ed;
+  --color-brand-gold: #c5a45b;
+  --color-brand-orange: #e8752e;
+  --color-brand-charcoal: #252922;
+
+  /* Legacy & test suite compatibility aliases */
+  --color-blinkit-yellow: #faf6ed;
+  --color-blinkit-yellow-dark: #f0ebd9;
+  --color-blinkit-yellow-light: #fefdfa;
+  --color-blinkit-green: #123b2a;
+  --color-blinkit-green-hover: #0b271c;
+  --color-blinkit-green-dark: #071f16;
+  --color-blinkit-green-light: #eaf1ed;
+  --color-blinkit-mint: #eaf1ed;
+  --color-blinkit-cream: #faf6ed;
   --color-blinkit-card: #ffffff;
-  --color-blinkit-bg: #f5f6f8;
+  --color-blinkit-bg: #faf6ed;
 
-  /* Legacy / Compatibility Warm Cream & Burgundy Tokens */
-  --color-cream-50: #fbfbfa;
-  --color-cream-100: #f5f5f3;
-  --color-cream-200: #e8e8e3;
-  --color-cream-300: #dcdcd6;
-  --color-cream-card: #ffffff;
-
-  --color-burgundy-950: #05400e;
-  --color-burgundy-900: #0c831f;
-  --color-burgundy-800: #0c831f;
-  --color-burgundy-700: #086918;
-  --color-burgundy-100: #ebf7ee;
-  --color-burgundy-50: #f4fbf6;
-
-  --color-orange-500: #e8602d;
-  --color-orange-600: #d24e1f;
-  --color-orange-100: #fdede6;
-
-  --color-gold-400: #d4a853;
-  --color-gold-100: #fef7d9;
-
-  --color-charcoal-900: #1c1c1c;
-  --color-charcoal-800: #2e2e2e;
-  --color-charcoal-700: #4a4a4a;
-  --color-charcoal-600: #666666;
-  --color-charcoal-500: #828282;
-  --color-charcoal-400: #a3a3a3;
-  --color-charcoal-300: #cccccc;
-  --color-charcoal-200: #e5e5e5;
+  --color-burgundy-950: #071f16;
+  --color-burgundy-900: #123b2a;
+  --color-burgundy-800: #123b2a;
+  --color-burgundy-700: #0b271c;
+  --color-burgundy-100: #eaf1ed;
+  --color-burgundy-50: #faf6ed;
 
   /* Typography */
   --font-serif: "Playfair Display", Georgia, serif;
@@ -72,8 +75,8 @@ html {
 body {
   margin: 0;
   font-family: var(--font-body);
-  background-color: #f5f6f8;
-  color: var(--color-charcoal-900);
+  background-color: #faf6ed; /* Warm Ivory Primary Background */
+  color: #252922; /* Charcoal Body Text */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -98,14 +101,14 @@ body {
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f2f4;
+  background: #f0ebd9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #d1d5db;
+  background: #c5a45b;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-blinkit-green);
+  background: #123b2a;
 }
 
 /* ===== UTILITY CLASSES ===== */
@@ -119,27 +122,51 @@ body {
 }
 
 .subtle-shadow {
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 1px 3px rgba(37, 41, 34, 0.04), 0 1px 2px rgba(37, 41, 34, 0.02);
 }
 
 .card-shadow {
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 4px 14px rgba(37, 41, 34, 0.05), 0 1px 3px rgba(37, 41, 34, 0.03);
 }
 
-.blinkit-header-shadow {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+.premium-header-shadow {
+  box-shadow: 0 2px 10px rgba(18, 59, 42, 0.06);
+}
+
+.btn-primary {
+  background-color: #123b2a;
+  color: #ffffff;
+  border: 1px solid #c5a45b;
+  font-weight: 700;
+  transition: all 0.15s ease-in-out;
+}
+.btn-primary:hover {
+  background-color: #0b271c;
+  box-shadow: 0 2px 8px rgba(18, 59, 42, 0.2);
+}
+
+.btn-secondary {
+  background-color: #e8752e;
+  color: #ffffff;
+  font-weight: 700;
+  transition: all 0.15s ease-in-out;
+}
+.btn-secondary:hover {
+  background-color: #d26420;
+  box-shadow: 0 2px 8px rgba(232, 117, 46, 0.25);
 }
 
 .blinkit-btn-add {
   background-color: #ffffff;
-  color: var(--color-blinkit-green);
-  border: 1px solid var(--color-blinkit-green);
+  color: #123b2a;
+  border: 1.5px solid #123b2a;
   font-weight: 700;
   transition: all 0.15s ease-in-out;
 }
 .blinkit-btn-add:hover {
-  background-color: var(--color-blinkit-green);
+  background-color: #123b2a;
   color: #ffffff;
+  border-color: #123b2a;
 }
 
 .serif-title {

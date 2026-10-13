@@ -2,13 +2,45 @@
 
 ## Current Objective
 
-Align the existing React + Vite frontend with the approved mobile e-commerce homepage reference design while preserving the verified business identity, locked tech stack, and modular architecture.
+Redesign the storefront to eliminate the yellow-heavy appearance and implement the owner-approved premium Indian home and lifestyle aesthetic (Deep Forest Green, Warm Ivory, Champagne Gold, and Warm Orange) while integrating the official circular APNA MART DIBIYAPUR logo image asset and maintaining 100% test suite passing.
 
 ---
 
-## Phase 2B: Mobile Reference Design Alignment (Current Phase)
+## Phase 2C: Premium UI Redesign & Official Logo Integration (Completed)
 
-### Step 1: Design System & Styling Tokens (`index.css` & `index.html`)
+### Step 1: Logo Asset Integration (`public/assets/branding/apna-mart-logo.jpg`)
+- [x] Received official circular APNA MART DIBIYAPUR logo file from owner.
+- [x] Placed original image asset byte-for-byte in `frontend/public/assets/branding/apna-mart-logo.jpg` and `frontend/src/assets/branding/apna-mart-logo.jpg`.
+- [x] Integrated original logo into `Navbar.jsx`, `Hero.jsx`, and `Footer.jsx` without alteration, cropping, or recolouring.
+
+### Step 2: Design Tokens & Palette Update (`index.css` & `index.html`)
+- [x] Updated `@theme` tokens in `frontend/src/index.css`:
+  - Primary Background: Warm Ivory (`#FAF6ED`)
+  - Primary Actions: Deep Forest Green (`#123B2A`)
+  - Subtle Borders & Dividers: Champagne Gold (`#C5A45B`)
+  - Secondary CTAs & Accents: Warm Orange (`#E8752E`)
+  - Body Typography: Charcoal (`#252922`)
+  - Surfaces: Pure White (`#FFFFFF`) / Warm Ivory
+- [x] Updated theme-color in `frontend/index.html` to `#123B2A`.
+
+### Step 3: Component Harmonization
+- [x] `Navbar.jsx`: Warm Ivory canvas, official circular logo, Forest Green brand title, refined rounded search bar.
+- [x] `Hero.jsx`: Warm Ivory card, Champagne Gold accents, Playfair Display headline, Forest Green "Shop now ➔" button.
+- [x] `Categories.jsx`: 2x4 grid with pure white/ivory cards and Champagne Gold borders.
+- [x] `OfferBanners.jsx`: Festive celebratory card & Deep Forest Green special value banner.
+- [x] `FeaturedProducts.jsx`: White cards with subtle Champagne Gold borders and Deep Forest Green ADD buttons.
+- [x] `ServiceBenefits.jsx`: White pill strip with Warm Ivory icon circles and Champagne Gold borders.
+- [x] `ShopByCollection.jsx`: Refined white cards with diagonal arrows and gold borders.
+- [x] `NewArrivals.jsx`: Product cards matching the premium aesthetic.
+- [x] `StoreIntro.jsx` & `ContactCTA.jsx`: Harmonized with verified phone numbers and directions link.
+- [x] `Footer.jsx`: Official circular logo, verified store address, phone numbers, and owner credit.
+- [x] `BottomNav.jsx`: Warm Ivory bar with Forest Green active tab.
+
+### Step 4: Quality & Test Harness Verification
+- [x] `npm test`: 30 / 30 tests passed across all 8 test files.
+- [x] `npm run lint`: 0 errors, 0 warnings.
+- [x] `npm run build`: 437 modules transformed, built in 515ms.
+- [x] Live development server running on `http://localhost:5173/`.
 - [x] Add serif font import (Playfair Display) to `frontend/index.html` alongside Outfit and Noto Sans Devanagari.
 - [x] Update `@theme` tokens in `frontend/src/index.css`:
   - Background: Warm cream (`--color-cream-50: #faf7f2`, `--color-cream-card: #ffffff`)

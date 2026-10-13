@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 
 /**
- * BottomNav — Blinkit UI Mobile Bottom Navigation.
- * 5 destinations: Home (active green), Categories, Offers, Wishlist, Account.
+ * BottomNav — Premium Mobile Bottom Navigation for APNA MART DIBIYAPUR (DEC-016).
+ * 5 destinations: Home (active Deep Forest Green), Categories, Offers, Wishlist, Account.
  * Fixed to bottom on mobile, hidden on desktop (md:hidden).
  */
 export default function BottomNav() {
@@ -65,7 +65,7 @@ export default function BottomNav() {
 
   return (
     <nav
-      className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-gray-100 shadow-lg md:hidden"
+      className="fixed bottom-0 left-0 right-0 z-40 bg-[#FAF6ED]/95 backdrop-blur-md border-t border-[#C5A45B]/30 shadow-lg md:hidden"
       aria-label="Mobile Bottom Navigation"
     >
       <div className="flex items-center justify-around h-14 px-1 max-w-md mx-auto">
@@ -79,14 +79,14 @@ export default function BottomNav() {
               whileTap={{ scale: 0.92 }}
               className={`flex flex-col items-center justify-center flex-1 py-1 relative transition-colors ${
                 isActive
-                  ? 'text-[#0C831F] text-burgundy-900 font-extrabold'
-                  : 'text-gray-400 hover:text-gray-700'
+                  ? 'text-[#123B2A] text-burgundy-900 font-extrabold'
+                  : 'text-[#868C80] hover:text-[#123B2A]'
               }`}
             >
               <div className="relative">
                 {tab.icon}
                 {tab.badge && (
-                  <span className="absolute -top-1 -right-2 px-1 py-0.2 rounded-full bg-[#0C831F] text-white text-[8px] font-bold leading-none">
+                  <span className="absolute -top-1 -right-2 px-1 py-0.2 rounded-full bg-[#E8752E] text-white text-[8px] font-bold leading-none">
                     {tab.badge}
                   </span>
                 )}
@@ -96,8 +96,8 @@ export default function BottomNav() {
               </span>
               {isActive && (
                 <motion.span
-                  layoutId="activeBlinkitTabIndicator"
-                  className="w-1 h-1 rounded-full bg-[#0C831F] mt-0.5"
+                  layoutId="activePremiumTabIndicator"
+                  className="w-1.5 h-1.5 rounded-full bg-[#123B2A] mt-0.5"
                 />
               )}
             </motion.a>

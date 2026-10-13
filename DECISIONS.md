@@ -19,6 +19,7 @@
 | DEC-013 | 2026-10-13 | Product Cards, Mobile Bottom Navigation & Git Repo Init | Implemented FeaturedProducts.jsx (2-col mobile grid, Add to Cart interaction, in-store pricing tags), BottomNav.jsx (5 persistent mobile tabs), root .gitignore, and initialized Git repository | ✅ Implemented |
 | DEC-014 | 2026-10-13 | Vitest + React Testing Library + JSDOM Test Harness | Configured repeatable test harness with 102 test cases catalog, 8 test files, thread pool execution, and JSDOM mocks for IntersectionObserver | ✅ Implemented |
 | DEC-015 | 2026-10-13 | Blinkit Mobile UI Transformation | Approved owner request: migrated storefront visual design to signature Blinkit UI — bright yellow header (#FFD200), forest green branding (#0C831F), soft mint hero card (#EBF7EE), 2x4 category grid, Diwali festival banners, special deals with green outline ADD buttons, mint service benefits pill, pastel collection cards, and green bottom navigation | ✅ Implemented |
+| DEC-016 | 2026-10-14 | Premium Indian Home & Lifestyle Palette & Official Circular Logo Integration | Replaced yellow-heavy theme with owner-approved premium palette: Deep Forest Green (#123B2A), Warm Ivory (#FAF6ED), Champagne Gold (#C5A45B), Warm Orange (#E8752E), Charcoal (#252922), and White (#FFFFFF). Integrated verified circular APNA MART DIBIYAPUR logo image asset into public/assets/branding/apna-mart-logo.jpg with zero redrawing or recolouring. | ✅ Implemented |
 
 ## Pending Decisions (Awaiting Owner Confirmation)
 
@@ -26,7 +27,7 @@
 |---|---|---|---|
 | PEND-001 | Contact Number Mapping | Map `9756595920`, `9528869946`, `7500781379` to primary support vs. WhatsApp Business | ⏳ Pending Owner Confirmation |
 | PEND-002 | Exact Domain & Registrar | Exact `.tech` domain name and registrar details for production DNS connection | ⏳ Pending Owner Confirmation |
-| PEND-003 | Logo Image File Upload | Owner to provide the original PNG/SVG logo file into `frontend/src/assets/` | ⏳ Pending File Upload |
+| PEND-003 | Logo Image File Upload | Official circular logo supplied by owner and integrated at public/assets/branding/apna-mart-logo.jpg | ✅ Resolved (Asset Integrated) |
 | PEND-004 | Serviceable PIN Codes & Rates | Delivery charge policies, serviceable PIN codes around Dibiyapur, minimum order values | ⏳ Pending Owner Confirmation |
 | PEND-005 | Payment Gateway Provider | Selection of payment gateway (Razorpay / Cashfree / PhonePe / Paytm / Stripe) | ⏳ Pending Owner Confirmation |
 | PEND-006 | COD Eligibility & Return Policy | Rules for Cash on Delivery and store return/exchange policy | ⏳ Pending Owner Confirmation |
