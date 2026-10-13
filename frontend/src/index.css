@@ -94,6 +94,29 @@ body {
   }
 }
 
+/* ===== ACCESSIBILITY: KEYBOARD FOCUS-VISIBLE STYLES ===== */
+
+*:focus-visible {
+  outline: 2px solid #123b2a;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid #123b2a;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(18, 59, 42, 0.15);
+}
+
+/* Remove focus outline for mouse/pointer clicks */
+*:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
 /* ===== CUSTOM SCROLLBAR ===== */
 
 ::-webkit-scrollbar {
@@ -171,4 +194,49 @@ body {
 
 .serif-title {
   font-family: var(--font-serif);
+}
+
+/* ===== TOAST ANIMATION (SMOOTH SLIDE-UP INSTEAD OF BOUNCE) ===== */
+
+@keyframes toast-slide-up {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.toast-enter {
+  animation: toast-slide-up 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ===== SKIP TO CONTENT LINK (ACCESSIBILITY) ===== */
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 9999;
+  padding: 8px 16px;
+  background: #123b2a;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 0 0 8px 8px;
+  text-decoration: none;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ===== SECTION DIVIDER UTILITY ===== */
+
+.section-gold-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c5a45b40, transparent);
 }

@@ -28,8 +28,10 @@ import BottomNav from './components/BottomNav';
 function App() {
   return (
     <div className="min-h-screen bg-[#FAF6ED] text-[#252922] font-body overflow-x-hidden selection:bg-[#EAF1ED] selection:text-[#123B2A] pb-16 md:pb-0">
+      {/* Skip to main content — WCAG 2.1 keyboard accessibility */}
+      <a href="#main-content" className="skip-link">Skip to main content</a>
       <Navbar />
-      <main>
+      <main id="main-content">
         <Hero />
         <Categories />
         <OfferBanners />

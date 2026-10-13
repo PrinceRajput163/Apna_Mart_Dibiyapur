@@ -1,9 +1,9 @@
-import { motion, useInView } from 'motion/react';
+import { motion, useInView, AnimatePresence } from 'motion/react';
 import { useRef, useState } from 'react';
 
 /**
  * ProductCard — Premium Product Card for APNA MART DIBIYAPUR (DEC-016).
- * Pure white card with Champagne Gold subtle border, crisp typography,
+ * Pure white card with Champagne Gold subtle border, genuine retail photography,
  * verified store pricing, discount badge, and Deep Forest Green ADD button.
  */
 function ProductCard({ product, index, onAddToCart }) {
@@ -19,8 +19,8 @@ function ProductCard({ product, index, onAddToCart }) {
       transition={{ duration: 0.35, delay: index * 0.05 }}
       className="group bg-white rounded-2xl border border-[#C5A45B]/30 hover:border-[#123B2A] shadow-2xs hover:shadow-md transition-all duration-200 flex flex-col justify-between overflow-hidden"
     >
-      {/* Image Preview Container */}
-      <div className="relative aspect-square bg-[#FAF6ED]/70 p-3 flex items-center justify-center overflow-hidden">
+      {/* Image Container with 1:1 Aspect Ratio and Subtle Gold Accent */}
+      <div className="relative aspect-square bg-[#FAF6ED] overflow-hidden">
         {/* Discount Badge */}
         {product.discount && (
           <span className="absolute top-2 left-2 z-10 px-2 py-0.5 rounded-md bg-[#123B2A] text-[#FAF6ED] text-[10px] font-extrabold tracking-wide border border-[#C5A45B]/30 shadow-2xs">
@@ -50,14 +50,15 @@ function ProductCard({ product, index, onAddToCart }) {
           </svg>
         </button>
 
-        {/* Product Visual Representation */}
-        <span
-          className="text-6xl sm:text-7xl group-hover:scale-110 transition-transform duration-300 drop-shadow-xs select-none"
+        {/* High-Resolution Product Photography */}
+        <img
+          src={product.image}
+          alt={product.title}
           role="img"
-          aria-label={product.title}
-        >
-          {product.icon}
-        </span>
+          className="w-full h-full object-cover object-center group-hover:scale-106 transition-transform duration-500 ease-out"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
       </div>
 
       {/* Product Details & Action */}
@@ -89,7 +90,7 @@ function ProductCard({ product, index, onAddToCart }) {
 
           <button
             onClick={() => onAddToCart(product)}
-            className="blinkit-btn-add px-4 sm:px-5 py-1.5 rounded-lg text-xs tracking-wider uppercase cursor-pointer active:scale-95 shadow-2xs"
+            className="blinkit-btn-add px-4 sm:px-5 py-1.5 rounded-lg text-xs tracking-wider uppercase cursor-pointer active:scale-95 shadow-2xs font-bold"
             aria-label={`Add ${product.title} to cart`}
           >
             ADD
@@ -115,7 +116,7 @@ export default function FeaturedProducts() {
       price: 599,
       mrp: 799,
       discount: '20% OFF',
-      icon: '🍽️',
+      image: '/assets/categories/crockery.jpg',
     },
     {
       id: 'deal-2',
@@ -125,7 +126,7 @@ export default function FeaturedProducts() {
       price: 299,
       mrp: 399,
       discount: '25% OFF',
-      icon: '🍱',
+      image: '/assets/categories/storage.jpg',
     },
     {
       id: 'deal-3',
@@ -135,7 +136,7 @@ export default function FeaturedProducts() {
       price: 499,
       mrp: 600,
       discount: '17% OFF',
-      icon: '👜',
+      image: '/assets/categories/bags.jpg',
     },
     {
       id: 'deal-4',
@@ -145,7 +146,7 @@ export default function FeaturedProducts() {
       price: 349,
       mrp: 450,
       discount: '22% OFF',
-      icon: '🧴',
+      image: '/assets/categories/cleaning.jpg',
     },
     {
       id: 'deal-5',
@@ -155,7 +156,7 @@ export default function FeaturedProducts() {
       price: 499,
       mrp: 650,
       discount: '23% OFF',
-      icon: '☕',
+      image: '/assets/categories/kitchen.jpg',
     },
     {
       id: 'deal-6',
@@ -165,7 +166,7 @@ export default function FeaturedProducts() {
       price: 249,
       mrp: 320,
       discount: '22% OFF',
-      icon: '🫙',
+      image: '/assets/categories/storage.jpg',
     },
   ];
 
@@ -177,27 +178,32 @@ export default function FeaturedProducts() {
   return (
     <section id="featured" className="py-4 sm:py-6 px-3 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
       <div id="deals">
+        {/* Subtle gold divider */}
+        <div className="section-gold-divider mb-4 sm:mb-5" />
 
         {/* Section Header */}
         <div className="flex items-end justify-between mb-3 sm:mb-4">
           <div>
+            <span className="text-[10px] sm:text-xs font-bold text-[#E8752E] uppercase tracking-wider block mb-1">
+              Verified In-Store Pricing
+            </span>
             <h2 className="font-heading font-extrabold text-lg sm:text-xl text-[#123B2A] tracking-tight">
               Today&apos;s Special Deals
             </h2>
             <p className="text-[11px] text-[#575C52]">
-              Big savings on everyday favourites • Verified in-store value
+              In-stock deals available for counter pickup at our Dibiyapur store
             </p>
           </div>
           <a
             href="#categories"
             className="text-xs font-bold text-[#123B2A] hover:text-[#E8752E] transition-colors"
           >
-            View all →
+            See all deals →
           </a>
         </div>
 
-        {/* Product Cards Grid: 2 columns on mobile, 4 on tablet, 6 on desktop */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2.5 sm:gap-3.5">
+        {/* 6-Card Responsive Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 sm:gap-3.5">
           {products.map((product, index) => (
             <ProductCard
               key={product.id}
@@ -208,18 +214,23 @@ export default function FeaturedProducts() {
           ))}
         </div>
 
-        {/* Interactive Toast Notification */}
-        {toastMessage && (
-          <div
-            role="status"
-            aria-live="polite"
-            className="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 bg-[#123B2A] text-white px-4 py-2.5 rounded-full shadow-lg border border-[#C5A45B] text-xs font-bold flex items-center gap-2 animate-bounce"
-          >
-            <span className="w-2 h-2 rounded-full bg-[#E8752E]" />
-            <span>{toastMessage}</span>
-          </div>
-        )}
-
+        {/* Smooth Toast Notification */}
+        <AnimatePresence>
+          {toastMessage && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 15 }}
+              transition={{ duration: 0.25 }}
+              role="status"
+              aria-live="polite"
+              className="fixed bottom-20 md:bottom-8 left-1/2 -translate-x-1/2 z-50 bg-[#123B2A] text-white px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold shadow-lg border border-[#C5A45B] flex items-center gap-2 pointer-events-none"
+            >
+              <span>🛍️</span>
+              <span>{toastMessage}</span>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );
