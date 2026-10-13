@@ -17,8 +17,8 @@
 | DEC-011 | 2026-10-13 | Playfair Display font + Cream & Burgundy Theme Tokens | Implemented in index.html & index.css for storefront header, search bar, and circular categories | ✅ Implemented |
 | DEC-012 | 2026-10-13 | Lifestyle Hero Banner & Service-Benefit Strip | Implemented in Hero.jsx & ServiceBenefits.jsx using verified physical store facts and non-fabricated claims | ✅ Implemented |
 | DEC-013 | 2026-10-13 | Product Cards, Mobile Bottom Navigation & Git Repo Init | Implemented FeaturedProducts.jsx (2-col mobile grid, Add to Cart interaction, in-store pricing tags), BottomNav.jsx (5 persistent mobile tabs), root .gitignore, and initialized Git repository | ✅ Implemented |
-
-
+| DEC-014 | 2026-10-13 | Vitest + React Testing Library + JSDOM Test Harness | Configured repeatable test harness with 102 test cases catalog, 8 test files, thread pool execution, and JSDOM mocks for IntersectionObserver | ✅ Implemented |
+| DEC-015 | 2026-10-13 | Blinkit Mobile UI Transformation | Approved owner request: migrated storefront visual design to signature Blinkit UI — bright yellow header (#FFD200), forest green branding (#0C831F), soft mint hero card (#EBF7EE), 2x4 category grid, Diwali festival banners, special deals with green outline ADD buttons, mint service benefits pill, pastel collection cards, and green bottom navigation | ✅ Implemented |
 
 ## Pending Decisions (Awaiting Owner Confirmation)
 

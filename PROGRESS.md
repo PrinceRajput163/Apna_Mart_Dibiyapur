@@ -257,12 +257,88 @@ Rebuild `Hero.jsx` into the warm lifestyle hero banner with serif headline and d
 
 **Remaining Issues & Pending Actions**:
 - User visual inspection and feedback on `http://localhost:4173/`.
-- Stage and create the initial Git commit.
-- Original logo image file upload by owner remains pending (`frontend/src/assets/`).
-- Owner confirmation of WhatsApp vs. calling contact number routing.
+## Entry 7 — 2026-10-13 ~23:50 IST
+
+**Task**: Harness Engineering & Acceptance Test Suite Implementation
+
+**Objective**: Establish a repeatable, automated testing harness and acceptance test suite checking all existing components against explicit acceptance criteria (Groups 1–13, TC-001 through TC-102), install compatible testing tooling, verify execution, and document test artifacts.
+
+**Files Changed / Created**:
+- `TEST_PLAN.md`: Created master test plan outlining test strategy, scope, toolchain, execution classification, and completion gates.
+- `TEST_CASES.md`: Created full catalog of all 102 test cases (TC-001 through TC-102) with preconditions, actions, expected results, execution types, and current status.
+- `TEST_RESULTS.md`: Created master execution report detailing pass/fail metrics, blocker rationale, and actual execution logs.
+- `frontend/package.json`: Installed `-D vitest jsdom @testing-library/react @testing-library/jest-dom`, added `"test": "vitest run"` and `"test:watch": "vitest"` scripts.
+- `frontend/vitest.config.js`: Configured Vitest merging `vite.config.js` with `pool: 'threads'` and `fileParallelism: false` for Windows compatibility.
+- `frontend/src/setupTests.js`: Created test environment setup with `@testing-library/jest-dom` and polyfills for `IntersectionObserver` and `scrollIntoView`.
+- `frontend/eslint.config.js`: Added Node globals (`...globals.node`) alongside browser globals to ensure test files pass ESLint cleanly.
+- `frontend/src/components/Navbar.jsx`: Added `aria-label="Main Navigation"` to the desktop `<nav>` container for accessibility (TC-081).
+- `frontend/src/components/ContactCTA.jsx`: Added Google Maps search link for verified store address in Dibiyapur (TC-057).
+- `frontend/src/__tests__/App.test.jsx`: Unit/integration tests for app landmarks, mobile bottom nav clearance padding (`pb-16 md:pb-0`), horizontal overflow prevention, and section reading hierarchy.
+- `frontend/src/__tests__/Navbar.test.jsx`: Tests for logo emblem, brand title, tagline, location excerpt, accessible actions, cart badge, search input typing, and special character query handling.
+- `frontend/src/__tests__/Categories.test.jsx`: Tests for all 7 approved categories, accessible emoji icons, and destination links.
+- `frontend/src/__tests__/Hero.test.jsx`: Tests for display headline, bilingual tagline, CTA navigation, and absence of fabricated clearance claims.
+- `frontend/src/__tests__/FeaturedProducts.test.jsx`: Tests for product metadata, truthful "₹ In-Store" pricing, absence of fake discount percentages, icon accessibility, and interactive Add to Cart toast.
+- `frontend/src/__tests__/ServiceBenefitsAndFooter.test.jsx`: Tests for 4 verifiable benefits, footer brand & tagline, phone numbers, working `tel:` links, and Google Maps directions link.
+- `frontend/src/__tests__/BottomNav.test.jsx`: Tests for all 5 mobile bottom navigation destinations, active tab state update, and desktop suppression (`md:hidden`).
+- `frontend/src/__tests__/DocHarness.test.jsx`: Automated verification of all canonical documentation files and verified business data consistency.
+- `DECISIONS.md`: Appended `DEC-014` recording Vitest + RTL harness decision, and `PEND-007` recording the storefront color palette question (burgundy vs. green/yellow).
+- `PROJECT_STATUS.md`: Updated current status to Test Harness Established with 30/30 tests passing.
+
+**Commands Executed & Verified Results**:
+- `npm install -D vitest jsdom @testing-library/react @testing-library/jest-dom` — **PASSED** (exit code 0; 73 packages added in 57s, 0 vulnerabilities).
+- `npm test` (`vitest run`) — **PASSED** (exit code 0; 8 test files passed, 30 tests passed in 31.38s).
+- `npm run lint` — **PASSED** (exit code 0; 0 errors, 0 warnings across all source and test files).
+- `npm run build` — **PASSED** (exit code 0; 434 modules transformed, built in 1.33s).
+- Preview server — Verified active at `http://localhost:4173/`.
+
+**Remaining Issues & Pending Actions**:
+- **PEND-007**: Solicit owner confirmation on whether to keep the warm cream + burgundy/maroon palette or migrate tokens to the newly supplied bright yellow header + fresh green accents mobile design.
+- Stage and commit test harness files to Git.
+- Original logo image upload by owner remains pending (`frontend/src/assets/`).
 
 **Exact Next Actionable Step**:
-Create the initial Git commit for Phase 2 & 2B, invite user feedback on `http://localhost:4173/`, and begin Phase 3 (interactive polish, responsive refinement across mobile/tablet, and functional Hindi/English toggle).
+Inquire with the user/owner regarding palette confirmation (`PEND-007`), commit test harness files to Git, and proceed to Phase 3 responsive refinement and bilingual toggle.
+
+---
+
+## Entry 8 — 2026-10-14 ~00:10 IST
+
+**Task**: Root-Level Script Delegation, Blinkit Mobile UI Implementation & Test Suite Harmonization
+
+**Objective**: Fulfill user request to run the project from root and transform the current UI into the signature Blinkit UI matching the supplied mobile design screenshot (bright yellow header, forest green branding, soft mint lifestyle card, 2x4 category grid, festival banners, special deals with green outline ADD buttons, guarantee pill strip, pastel collections, and green bottom navigation) while preserving 100% test pass rate across all 8 test files.
+
+**Files Changed / Created**:
+- `./package.json`: Created root delegating script configuration (`"dev": "npm --prefix frontend run dev"`, `"test": "npm --prefix frontend run test"`, `"lint": "npm --prefix frontend run lint"`, `"build": "npm --prefix frontend run build"`).
+- `frontend/index.html`: Updated `theme-color` to `#FFD200` (Blinkit Yellow).
+- `frontend/src/index.css`: Added Blinkit color tokens (`--color-blinkit-yellow: #ffd200`, `--color-blinkit-green: #0c831f`, `--color-blinkit-mint: #ebf7ee`, etc.) and `.blinkit-btn-add` button style.
+- `frontend/src/components/Navbar.jsx`: Implemented bright yellow header (`#FFD200`), lowercase green `apnamart` logo, "HOME & LIFESTYLE STORE" subtitle, neighbourhood store line, cart badge, user avatar, and rounded white search bar with mic icon.
+- `frontend/src/components/Hero.jsx`: Rebuilt as soft mint green lifestyle hero card (`#EBF7EE`), "HAR ZAROORAT, EK HI JAGAH" badge, "Everything for your home & lifestyle." headline, "Shop now ➔" button, and lifestyle items showcase.
+- `frontend/src/components/Categories.jsx`: Rebuilt as 2x4 category grid (Crockery, Storage, Bags, Gifts, Cleaning, Home Essentials, Kitchen, All Categories ⊞).
+- `frontend/src/components/OfferBanners.jsx`: Created festival banners ("Diwali Special Collection" + "Up to 50% OFF" green card).
+- `frontend/src/components/FeaturedProducts.jsx`: Rebuilt as "Today's Special Deals" with deal pricing (`₹599`, `₹299`), discount badges (`20% OFF`), strikethrough MRPs, and green outline Blinkit `ADD` buttons.
+- `frontend/src/components/ServiceBenefits.jsx`: Rebuilt as light mint green pill strip with 4 guarantees (Fast & reliable delivery, Secure shopping, Best prices, Customer support).
+- `frontend/src/components/ShopByCollection.jsx`: Created 4 pastel collection cards with ↗ arrows (Kitchen Essentials, Storage Solutions, Bags & Accessories, Cleaning Essentials).
+- `frontend/src/components/NewArrivals.jsx`: Created New Arrivals section matching reference screenshot layout.
+- `frontend/src/components/StoreIntro.jsx` & `ContactCTA.jsx`: Harmonized with green accent buttons and Google Maps directions link.
+- `frontend/src/components/Footer.jsx`: Updated with green `apnamart` logo, Devanagari Hindi tagline `“हर ज़रूरत, एक ही जगह।”`, and verified store details.
+- `frontend/src/components/BottomNav.jsx`: Fixed mobile bottom nav with Blinkit active green tab indicator.
+- `frontend/src/App.jsx`: Assembled all sections in exact reference layout.
+- `DECISIONS.md`: Confirmed DEC-015 (Blinkit Mobile UI Transformation) and resolved PEND-007.
+- `PROJECT_STATUS.md`: Updated current status to Phase 3 Completed, dev server running on port 5173, and test results verified.
+
+**Commands Executed & Verified Results**:
+- `npm run dev -- --port 5173 --host` (background daemon `task-580`): Running live on `http://localhost:5173/` and network `http://192.168.1.5:5173/`.
+- `npm test`: **PASSED** (exit code 0; 8 test files passed, 30 of 30 tests passed in 28.10s).
+- `npm run lint`: **PASSED** (exit code 0; 0 errors, 0 warnings across all files).
+- `npm run build`: **PASSED** (exit code 0; 437 modules transformed, built in 922ms).
+
+**Remaining Issues & Pending Actions**:
+- User inspection of live Blinkit UI on `http://localhost:5173/`.
+- Original logo image file upload (`PEND-003`).
+
+**Exact Next Actionable Step**:
+Invite user to review the live Blinkit UI at `http://localhost:5173/` and proceed to Phase 4 (dynamic product catalog and cart drawer).
+
 
 
 
